@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Douglas Prudenciano | Analista de Dados Júnior</title>
+<meta name="description" content="Portfólio de Douglas Prudenciano, Analista de Dados Júnior: Python, SQL, Power BI, ETL e dashboards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F6F8; --surface:#FFFFFF; --ink:#12202B; --muted:#51616E; --line:#D3DEE5;
+  --accent:#0F766E; --accent-ink:#FFFFFF; --signal:#C77F00; --tint:#E3EFEE;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --text:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E171E; --surface:#15222B; --ink:#E6EEF3; --muted:#9BAAB6; --line:#26363F;
+    --accent:#4FD1C5; --accent-ink:#0E171E; --signal:#F2B84B; --tint:#12302F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E171E; --surface:#15222B; --ink:#E6EEF3; --muted:#9BAAB6; --line:#26363F;
+  --accent:#4FD1C5; --accent-ink:#0E171E; --signal:#F2B84B; --tint:#12302F; color-scheme:dark;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--text)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0}
+.brand{font:700 1.05rem var(--head);color:var(--ink);text-decoration:none}
+nav{display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:2rem;padding:.25rem .8rem;font:inherit;font-size:.85rem;cursor:pointer}
+.hero{padding:3.5rem 0 2.5rem}
+.hero h1{font:800 clamp(2.2rem,6.5vw,4rem)/1.05 var(--head);letter-spacing:-.02em;margin:0 0 1.1rem;max-width:16ch}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0 0 1.6rem}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.alt{color:var(--accent)}
+.pipe{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:.75rem;background:var(--surface);overflow:hidden}
+.pipe li{padding:1rem 1.1rem;position:relative;border-right:1px solid var(--line)}
+.pipe li:last-child{border-right:0}
+.pipe b{display:block;font:700 1rem var(--head)}
+.pipe span{font-size:.85rem;color:var(--muted)}
+.pipe i{font-style:normal;font:600 .8rem var(--text);color:var(--signal)}
+.pipe li::after{content:"";position:absolute;left:0;bottom:0;height:3px;background:var(--accent);width:100%;transform-origin:left;animation:fill 1.6s ease-out both}
+.pipe li:nth-child(2)::after{animation-delay:.3s}.pipe li:nth-child(3)::after{animation-delay:.6s}.pipe li:nth-child(4)::after{animation-delay:.9s}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.pipe li::after{animation:none}html{scroll-behavior:auto}}
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+h2{font:700 1.7rem var(--head);margin:0 0 1.2rem;letter-spacing:-.01em}
+.about{max-width:42rem}
+.about p{margin:0 0 1rem}
+.feat{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:.5rem;padding:1.6rem;margin-bottom:1.25rem}
+.feat h3{font:700 1.4rem/1.25 var(--head);margin:0 0 .5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem}
+.proj{padding:1.1rem 0;border-top:1px solid var(--line)}
+.proj h3{font:700 1.1rem var(--head);margin:0 0 .35rem}
+.proj p{margin:0 0 .6rem;color:var(--muted);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.6rem 0 0;padding:0;list-style:none}
+.tags li{background:var(--tint);color:var(--ink);border-radius:2rem;padding:.15rem .7rem;font-size:.82rem;font-weight:500}
+.feat ul.pts{margin:.6rem 0 0;padding-left:1.2rem}
+.feat ul.pts li{margin-bottom:.35rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem}
+.skills h3{font:700 1rem var(--head);margin:0 0 .5rem;color:var(--accent)}
+.job{display:grid;grid-template-columns:11rem 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.job time{color:var(--muted);font-size:.9rem}
+.job h3{font:700 1.05rem var(--head);margin:0}
+.job p.org{margin:0 0 .4rem;color:var(--muted)}
+.job ul{margin:0;padding-left:1.2rem}
+.job li{margin-bottom:.3rem}
+@media (max-width:40rem){.pipe{grid-template-columns:1fr 1fr}.pipe li:nth-child(2){border-right:0}.pipe li:nth-child(-n+2){border-bottom:1px solid var(--line)}.job{grid-template-columns:1fr;gap:.2rem}}
+.edu li{margin-bottom:.4rem}
+.contact p{max-width:38rem;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="#topo">Douglas Prudenciano</a>
+  <nav aria-label="Principal">
+    <a href="#projetos">Projetos</a><a href="#habilidades">Habilidades</a><a href="#experiencia">Experiência</a><a href="#contato">Contato</a>
+    <button id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </nav>
+</header>
+
+<main id="topo">
+<div class="hero">
+  <h1>Analista de Dados Júnior</h1>
+  <p class="lead">Transformo dados brutos em decisões claras. Trabalho com Python, SQL e Power BI, da coleta ao dashboard, e estou em busca da minha primeira oportunidade na área.</p>
+  <div class="cta">
+    <a class="btn main" href="#projetos">Ver projetos</a>
+    <a class="btn alt" href="#contato">Entrar em contato</a>
+  </div>
+  <ol class="pipe" aria-label="Ciclo de dados que domino">
+    <li><i>1</i><b>Coleta</b><span>APIs REST e Web Scraping</span></li>
+    <li><i>2</i><b>Tratamento</b><span>ETL com Python e Pandas</span></li>
+    <li><i>3</i><b>Análise</b><span>EDA, SQL e modelagem</span></li>
+    <li><i>4</i><b>Entrega</b><span>Dashboards no Power BI</span></li>
+  </ol>
+</div>
+
+<section id="sobre">
+  <h2>Sobre mim</h2>
+  <div class="about">
+    <p>Sou formado pelo Bootcamp de Analista de Dados da Generation Brasil (302h) e curso Análise e Desenvolvimento de Sistemas na UNIP, com conclusão prevista para 12/2026.</p>
+    <p>Antes de entrar em dados, trabalhei com atendimento ao cliente e controle de qualidade (5S). Dessas áreas trago comunicação clara, atenção a detalhes e foco em resolver problemas. Tenho inglês avançado.</p>
+  </div>
+</section>
+
+<section id="projetos">
+  <h2>Projetos</h2>
+  <article class="feat">
+    <h3>Inteligência de Mercado Automotivo: Market Share e Indicadores Macroeconômicos</h3>
+    <p>Solução ponta a ponta sobre o histórico dos 50 veículos mais emplacados do Brasil (2020–2025).</p>
+    <ul class="pts">
+      <li>Pipeline ETL em Python (Pandas) integrando vendas, Tabela FIPE e indicadores do Banco Central (IPCA e Taxa SELIC).</li>
+      <li>Dashboard interativo em Power BI.</li>
+      <li>Colaboração na aplicação web de recomendação de veículos AutoCompara.</li>
+    </ul>
+    <ul class="tags"><li>Python</li><li>Pandas</li><li>Power BI</li><li>ETL</li></ul>
+  </article>
+  <div class="grid">
+    <article class="proj">
+      <h3>Limpeza de Dados de Reservas Hoteleiras</h3>
+      <p>Pipeline de data cleaning: inconsistências removidas, dados ausentes imputados e outliers tratados. Variáveis temporais e financeiras padronizadas para uso em BI.</p>
+      <ul class="tags"><li>Python</li><li>Pandas</li></ul>
+    </article>
+    <article class="proj">
+      <h3>Monitoramento Climático via API</h3>
+      <p>Coleta automatizada de dados climáticos em tempo real por API REST, com payloads JSON estruturados em DataFrames prontos para análise.</p>
+      <ul class="tags"><li>Python</li><li>API REST</li><li>JSON</li></ul>
+    </article>
+    <article class="proj">
+      <h3>Exercícios de Python e SQL</h3>
+      <p>Prática do Bootcamp Generation Brasil: coleções, funções, consultas relacionais e agregações em bancos de dados.</p>
+      <ul class="tags"><li>Python</li><li>SQL</li></ul>
+    </article>
+  </div>
+  <p style="margin-top:1.25rem">Todos os códigos estão no meu <a href="https://github.com/DouglasP15?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
+</section>
+
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <div class="skills">
+    <div><h3>Linguagens e bancos de dados</h3><ul class="tags"><li>Python</li><li>Pandas</li><li>NumPy</li><li>SQL</li><li>JOINs</li><li>Agregações</li></ul></div>
+    <div><h3>Business Intelligence</h3><ul class="tags"><li>Power BI</li><li>Dashboards</li><li>Modelagem de dados</li><li>KPIs</li><li>Storytelling com dados</li></ul></div>
+    <div><h3>Tratamento de dados</h3><ul class="tags"><li>ETL</li><li>Limpeza e padronização</li><li>EDA</li><li>APIs REST</li><li>Web Scraping</li><li>JSON</li></ul></div>
+    <div><h3>Ferramentas e métodos</h3><ul class="tags"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Scrum</li><li>5S</li><li>IA aplicada à automação</li></ul></div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <h2>Experiência e formação</h2>
+  <div class="job">
+    <time>08/2025 – 01/2026</time>
+    <div><h3>Operador de Produção</h3><p class="org">Flex</p>
+      <ul><li>Inspeção visual e controle de qualidade de componentes eletrônicos, com atenção a detalhes aplicável à validação de dados.</li><li>Metodologia 5S e processos padronizados.</li></ul></div>
+  </div>
+  <div class="job">
+    <time>01/2022 – 03/2024</time>
+    <div><h3>Atendente Prime II / PAC</h3><p class="org">Cinemark Brasil</p>
+      <ul><li>Atendimento consultivo e resolução de problemas, com acompanhamento de metas comerciais.</li><li>Trabalho em equipe em ambiente de alto volume.</li></ul></div>
+  </div>
+  <div class="job">
+    <time>Formação</time>
+    <div class="edu"><ul style="margin:0;padding-left:1.2rem">
+      <li><b>Bootcamp Analista de Dados (302h)</b>, Generation Brasil, 2026</li>
+      <li><b>Análise e Desenvolvimento de Sistemas</b>, UNIP, conclusão prevista em 12/2026</li>
+      <li><b>Introdução ao Python (13h) e Banco de Dados (2h)</b>, Ada, 2025</li>
+      <li><b>Idiomas:</b> inglês avançado, espanhol básico</li></ul></div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <h2>Vamos conversar</h2>
+  <p>Estou disponível para vagas de Analista de Dados Júnior em Campinas, região e remoto. Me chame por qualquer um dos canais abaixo.</p>
+  <div class="links">
+    <a class="btn main" href="mailto:benj_or_dodo@hotmail.com">Enviar e-mail</a>
+    <a class="btn alt" href="https://www.linkedin.com/in/douglas-prudenciano/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn alt" href="https://github.com/DouglasP15" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn alt" href="https://wa.me/5519989710672" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>Douglas William Rodrigues Prudenciano · Campinas, SP</footer>
+</div>
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
